@@ -31,7 +31,7 @@ class WhoisTest extends TestCase
     
     public function testIsAvailable()
     {
-        $response = $this->whois->queryDomain('registro,br');
+        $response = $this->whois->queryDomain('registro.br');
         $this->assertFalse($response->isAvailable());
     }
     
