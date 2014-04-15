@@ -24,11 +24,6 @@ class Whois
      */
     protected $httpClient;
     
-    /*
-     *
-     */
-    protected $queryResponse;
-    
     /**
      * @param \GuzzleHttp\Client|null $_client
      * @return void
@@ -45,8 +40,7 @@ class Whois
     public function queryDomain($domain)
     {
         $response = $this->httpClient->get($this->createQueryString($domain));
-        $this->queryResponse = new Response(json_decode($response->getBody()));
-        return $this->queryResponse;
+        return new Response(json_decode($response->getBody()));
     }
     
     /*
@@ -64,13 +58,5 @@ class Whois
     public function getHttpClient()
     {
         return $this->httpClient;
-    }
-    
-    /*
-     *
-     */
-    public function getResponse()
-    {
-        return $this->queryResponse;
     }
 }
