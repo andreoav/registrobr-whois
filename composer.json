@@ -18,7 +18,7 @@
         }
     ],
     "autoload": {
-        "files:": [
+        "files": [
             "src/bootstrap.php"
         ],
         "psr-0": {
